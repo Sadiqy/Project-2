@@ -12,7 +12,4 @@ $("#emailinput").on("click", function () {
     }).then(function (response) {
       
       console.log();
-      let  = `
       
-  
-    
