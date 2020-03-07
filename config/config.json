@@ -1,7 +1,7 @@
 {
     "development": {
       "username": "root",
-      "password": "",
+      "password": "asdfasdf",
       "database": "users",
       "host": "127.0.0.1",
       "dialect": "mysql"
@@ -21,4 +21,3 @@
       "dialect": "mysql"
     }
   }
-  
