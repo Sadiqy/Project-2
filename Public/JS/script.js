@@ -39,3 +39,11 @@ document.addEventListener('DOMContentLoaded', function () {
     return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
   }
 });
+
+$(".view-profile").click(function() {
+  $(".modal").addClass("is-active");  
+});
+
+$(".delete").click(function() {
+   $(".modal").removeClass("is-active");
+});
