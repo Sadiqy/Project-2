@@ -138,6 +138,16 @@
     text-align: center;
 }
 
+#dbCard {
+    padding: 78px;
+    font-family: Heebo;
+    margin: auto;
+    width: 70%;
+}
+
+#dropdown{
+    width: 100%;
+}
 #signinCard {
     padding: 78px;
     font-family: Heebo;
