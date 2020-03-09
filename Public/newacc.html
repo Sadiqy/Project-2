@@ -21,6 +21,11 @@
 </head>
 
 <body>
+
+    <video id="videoBG" poster="images/poster.png" autoplay muted loop>
+        <source src="images/videobg.mov" type="video/mp4">
+    </video>
+
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
@@ -42,19 +47,19 @@
         <h1 class="signupHeader">Be a Spottr!</h1>
 
         <label class="label">Full Name</label>
-        <input class="input signinInput" type="text" placeholder="Full Name">
+        <input class="input nameInput" type="text" placeholder="Full Name">
 
         <label class="label">Email</label>
-        <input class="input signinInput" type="text" placeholder="Email">
+        <input class="input newemailInput" type="text" placeholder="Email">
 
         <label class="label">Password</label>
-        <input class="input signinInput" placeholder="Password">
+        <input class="input newpasswordInput" placeholder="Password">
 
         <br/>
         <br/>
 
         <div class="buttons">
-            <button class="button is-link" id="startBtn"><a href="questions.html">Sign Up</a></button>
+            <button class="button is-link" id="signupBtn">Sign Up</button>
         </div>
       
 
@@ -66,6 +71,6 @@
 
     </div>
 
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="JS/script.js"></script>
 </body>
 </html>
