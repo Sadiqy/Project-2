@@ -62,6 +62,13 @@
     color: white;
 }
 
+#videoBG {
+    position:fixed;
+    z-index: -1;
+    width:100%;     
+    height: auto;
+    opacity: 0.8;
+}
 
 .contactSubmit {
     border-radius: 5px;
@@ -143,16 +150,56 @@
     font-family: Heebo;
     margin: auto;
     width: 70%;
+    background-clip: content-box;
+    background-color: aliceblue;
 }
 
 #dropdown{
     width: 100%;
 }
+
 #signinCard {
     padding: 78px;
     font-family: Heebo;
     margin: auto;
     width: 50%;
+    background-clip: content-box;
+    background-color: aliceblue;
+}
+
+#matchCard{
+    padding: 78px;
+    font-family: Heebo;
+    margin: auto;
+    width: 70%;
+    background-clip: content-box;
+    background-color: aliceblue;
+}
+
+.match-img{
+    padding-top: 30px;
+}
+
+.media-content{
+    padding-left: 10px;
+}
+
+.select-profile {
+    padding-top: 60px;
+}
+
+.user-img {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.modal-name {
+    text-align: center;
+}
+
+.modal-buttons {
+    justify-content: center;
 }
 
 .contactFooter{
@@ -209,106 +256,19 @@
     height: 100%;
 }
 
-#searchArea{
-    background-color: rgb(238, 231, 231);
-    border-radius: 5px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+@media (min-aspect-ratio: 16/9) {
+    #videoBG {
+        width:100%;
+        height: auto;
+    }
 }
 
-#music-key {
-    display:inline-block;
+@media (max-aspect-ratio: 16/9) {
+    #videoBG { 
+        width:auto;
+        height: 100%;
+    }
 }
-
-#musicHeader {
-    padding: 5px;
-}
-
-.musicInput {
-    width: 80%;
-    display: inline-block;
-}
-
-.listItem {
-    border: 2px solid rgb(219, 113, 26);
-    border-radius: 5px;
-    background-color: white;
-    font-weight:bold;
-    padding: 5px;
-    margin: 8px;
-}
-
-.mapHeader {
-    font-size: 22px;
-    padding: 3px;
-    font-weight: bold;
-}
-
-.exercise {
-    padding: 5px;
-}
-
-.checkbox {
-    float: right;
-    -webkit-appearance: none;
-    border: 1px solid rgb(219, 113, 26);
-    padding: 10px;
-    border-radius: 3px;
-    background-color: white;
-}
-
-.checkbox:checked {
-    background-color: rgb(219, 113, 26);
-    outline-color: orange;
-}
-
-.checkbox:not(:checked) {
-    outline-color: orange;
-}
-
-.recoSection, .workOutSection {
-    border: 2px solid rgb(219, 113, 26);
-    border-radius: 5px;
-    width: 100%;
-    padding: 10px;
-}
-
-
-.workOutItem {
-    padding: 5px;
-    background-color: rgb(238, 231, 231);
-    border-radius: 5px;
-    margin: 5px;
-    font-weight: bold;
-}
-
-.bold {
-    font-weight: bold;
-}
-
-#map{
-	width: 100%;
-    height: 250px;
-    display: inline-block;
-    padding: 10px;
-
-}
-
-.mapSection {
-    border: 2px solid rgb(219, 113, 26);
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-}
-
-#results {
-    display: inline-block;
-}
-
-#resultSection {
-    padding-left: 0px !important;
-}
-
 
 @media only screen and (min-width: 768px) {
     #chest {
@@ -394,6 +354,14 @@
 
 
   @media only screen and (max-width: 768px) {
+    #videoBG {
+        display: none;
+    }
+    body {
+        background: url('images/poster.png');
+        background-size: cover;
+    }
+
     .contactFooter {
         position:fixed;
         left:0px;

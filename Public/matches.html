@@ -20,7 +20,12 @@
     <title>Spottr: Your Friendly Motivator</title>
 </head>
 
-<body>
+<body class="internal">
+
+    <video id="videoBG" poster="images/poster.png" autoplay muted loop>
+        <source src="images/videobg.mov" type="video/mp4">
+    </video>
+
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
@@ -35,7 +40,7 @@
     </div>
 </nav>
 
-<div id="dbCard">
+<div id="matchCard">
 
     <div class="card-content" id="cardContent">
 
@@ -45,16 +50,17 @@
             <div class="card-content profile">
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-100x100">
+                  <figure class="image is-100x100 match-img">
                     <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="media-content">
                   <p class="title is-4">Name of Spottr</p>
+                  <br/>
                   <p class="subtitle is-8">Fitness Goal: </p>
                   <p class="subtitle is-8">ZIP Code: </p>
                 </div>
-                <div class="buttons">
+                <div class="buttons select-profile">
                     <button class="button is-link view-profile">Spot this Spottr!</button>
                   </div>
               </div>
@@ -67,16 +73,17 @@
             <div class="card-content profile">
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-100x100">
+                  <figure class="image is-100x100 match-img">
                     <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="media-content">
                   <p class="title is-4">Name of Spottr</p>
+                  <br/>
                   <p class="subtitle is-8">Fitness Goal: </p>
                   <p class="subtitle is-8">ZIP Code: </p>
                 </div>
-                <div class="buttons">
+                <div class="buttons select-profile">
                     <button class="button is-link view-profile">Spot this Spottr!</button>
                   </div>
               </div>
@@ -89,18 +96,19 @@
             <div class="card-content profile">
               <div class="media">
                 <div class="media-left">
-                  <figure class="image is-100x100">
+                  <figure class="image is-100x100 match-img">
                     <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
                   </figure>
                 </div>
                 <div class="media-content">
                   <p class="title is-4">Name of Spottr</p>
+                  <br/>
                   <p class="subtitle is-8">Fitness Goal: </p>
                   <p class="subtitle is-8">ZIP Code: </p>
                 </div>
-                <div class="buttons">
+                <div class="buttons select-profile">
                     <button class="button is-link view-profile">Spot this Spottr!</button>
-                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -112,15 +120,20 @@
               <section class="modal-card-body">
                 <button class="delete" aria-label="close"></button>
                 <div class="media-left">
-                    <figure class="image is-100x100">
-                      <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                    <figure class="image is-50x50 user-img">
+                      <img src="https://bulma.io/images/placeholders/48x48.png" alt="Placeholder image">
                     </figure>
                   </div>
+                  <br/>
                   <div class="media-content">
-                    <p class="title is-4">Name of Spottr</p>
+                    <p class="title is-4 modal-name">Name of Spottr</p>
                     <p class="subtitle is-8">Fitness Goal: </p>
                     <p class="subtitle is-8">ZIP Code: </p>
                   </div>
+                  <div class="buttons modal-buttons">
+                    <button class="button is-link gym-map">Gyms Nearby</button>
+                    <button class="button is-link chatbox">Hit your Spottr up!</button>
+                </div>
               </section>
             </div>
           </div>
