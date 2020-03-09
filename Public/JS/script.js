@@ -2,48 +2,89 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Dropdowns
+  // Login Info
+  $("#signinBtn").on("click", function () {
+    console.log("was clicked");
 
-  var $dropdowns = getAll('.dropdown:not(.is-hoverable)');
-
-  if ($dropdowns.length > 0) {
-    $dropdowns.forEach(function ($el) {
-      $el.addEventListener('click', function (event) {
-        event.stopPropagation();
-        $el.classList.toggle('is-active');
-      });
+    let userEmailInput = $(".emailInput").val();
+    console.log(userEmailInput);
+    let queryURL = ("users/" + userEmailInput)
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
     });
 
-    document.addEventListener('click', function (event) {
-      closeDropdowns();
+    let userPassInput = $(".passwordInput").val();
+    console.log(userPassInput);
+    let querypassURL = ("api/users/" + userPassInput)
+    $.ajax({
+      url: querypassURL,
+      method: "GET"
+    }).then(function (response) {
+      console.log(response);
     });
-  }
-
-  function closeDropdowns() {
-    $dropdowns.forEach(function ($el) {
-      $el.classList.remove('is-active');
-    });
-  }
-
-  // Close dropdowns if ESC pressed
-  document.addEventListener('keydown', function (event) {
-    var e = event || window.event;
-    if (e.keyCode === 27) {
-      closeDropdowns();
-    }
   });
 
-  // Functions
+  //Signup Info
+  $("#signupBtn").on("click", function () {
+    console.log("was clicked");
 
-  function getAll(selector) {
-    return Array.prototype.slice.call(document.querySelectorAll(selector), 0);
-  }
+    let userEmailInput = $(".newemailInput").val();
+    let userNameInput = $(".nameInput").val();
+    let sendData = {full_name: userNameInput, email: userEmailInput};
+    
+    let queryURL = ("api/users")
+    
+    $.ajax({
+      url: queryURL,
+      method: "POST",
+      data: sendData
+    }).then(function (response) {
+      console.log(response);
+    });
+
+  });
+
+//Question Answers Posting
+$(".fgDD").click(function () {
+  $(".fgDD").addClass("is-active");
 });
 
-$(".view-profile").click(function() {
-  $(".modal").addClass("is-active");  
+let $span = $("#fitnessgoal")
+
+$(".dropdown-item").click(function (event) {
+  event.stopPropagation();
+  const value = $(this).data("value");
+  $span.text(value);
+  $(".fgDD").removeClass("is-active");
 });
 
-$(".delete").click(function() {
-   $(".modal").removeClass("is-active");
+$("#matchBtn").on("click", function () {
+  console.log("was clicked");
+
+  let userZIPCode = $(".zipcode").val();
+  let updateData = {fitness_goal: $span, zipcode: userZIPCode}
+  let queryURLgoals = ("api/users/:email")
+  $.ajax({
+    url: queryURLgoals,
+    method: "PUT",
+    data: updateData
+  }).then(function (response) {
+    console.log(response);
+  });
 });
+
+
+
+  // Profile Modal on click
+  $(".view-profile").click(function () {
+    $(".modal").addClass("is-active");
+  });
+
+  $(".delete").click(function () {
+    $(".modal").removeClass("is-active");
+  });
+
+  
