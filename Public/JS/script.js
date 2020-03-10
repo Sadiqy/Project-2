@@ -1,7 +1,7 @@
 'use strict';
 
 document.addEventListener('DOMContentLoaded', function () {
-
+  console.log('JS LOADED')
   // Login Info
   $("#signinBtn").on("click", function () {
     console.log("was clicked");
@@ -37,13 +37,18 @@ document.addEventListener('DOMContentLoaded', function () {
     
     let queryURL = ("api/users")
     
-    $.ajax({
-      url: queryURL,
+    fetch(queryURL, {
       method: "POST",
-      data: sendData
-    }).then(function (response) {
-      console.log(response);
-    });
+      headers:{
+        "Content-type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(sendData),
+    }).then(res=> res.json())
+    .then(data => {
+      console.log("Success", data);
+      window.location.href = '/questions'+data.redirect
+    })
 
   });
 
@@ -62,18 +67,33 @@ $(".dropdown-item").click(function (event) {
 });
 
 $("#matchBtn").on("click", function () {
-  console.log("was clicked");
-
+  console.log("was clicked, fucker");
+  let value = $span.text()
+  let userEmailInput = $("#userEmail").text().trim()
   let userZIPCode = $(".zipcode").val();
-  let updateData = {fitness_goal: $span, zipcode: userZIPCode}
-  let queryURLgoals = ("api/users/:email")
-  $.ajax({
-    url: queryURLgoals,
-    method: "PUT",
-    data: updateData
-  }).then(function (response) {
-    console.log(response);
-  });
+  let updateData = {fitness_goal: value, zipcode: userZIPCode, email: userEmailInput }
+  let queryURLgoals = ("/api/users/")
+  fetch(queryURLgoals, {
+      method: "PUT",
+      headers:{
+        "Content-type": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify(updateData),
+    }).then(res=> res.json())
+    .then(data => {
+      console.log("Success", data);
+      window.location.href = '/matches/' + userEmailInput;
+    })
+
+  // $.ajax({
+  //   url: queryURLgoals,
+  //   method: "PUT",
+  //   data: updateData
+  // }).then(function (data) {
+  //   console.log(data)
+  //   window.location.href = ('/matches'+ data.redirect)
+  // });
 });
 
 
@@ -87,4 +107,4 @@ $("#matchBtn").on("click", function () {
     $(".modal").removeClass("is-active");
   });
 
-  
+});

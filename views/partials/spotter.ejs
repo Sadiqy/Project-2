@@ -1,3 +1,4 @@
+ <% for (let i = 0; i < matches.length; i++) { %>
 <div class="card">
     <div class="card-content profile">
       <div class="media">
@@ -7,10 +8,10 @@
           </figure>
         </div>
         <div class="media-content">
-          <p class="title is-4">Name of Spottr</p>
+          <p class="title is-4"> <%= matches[i].full_name %> </p>
           <br/>
-          <p class="subtitle is-8">Fitness Goal: </p>
-          <p class="subtitle is-8">ZIP Code: </p>
+          <p class="subtitle is-8">Fitness Goal: <%= matches[i].fitness_goal %> </p>
+          <p class="subtitle is-8">ZIP Code: <%= matches[i].zipcode%> </p>
         </div>
         <div class="buttons select-profile">
             <button class="button is-link view-profile">Spot this Spottr!</button>
@@ -19,3 +20,5 @@
     </div>
   </div>
   <br/>
+
+  <% } %>

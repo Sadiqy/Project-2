@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <%- include ('../partials/head') %>
-</head>
 
-<body>
-
-  <video id="videoBG" poster="images/poster.png" autoplay muted loop>
-    <source src="images/videobg.mov" type="video/mp4">
+  <video id="videoBG" poster="../images/poster.png" autoplay muted loop>
+    <source src="../images/videobg.mov" type="video/mp4">
   </video>
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item" href="index.html">
-        <img src="images/spottr.png" alt="Spottr logo" width="112" height="50">
+      <a class="navbar-item" href="../">
+        <img src="../images/spottr.png" alt="Spottr logo" width="112" height="50">
       </a>
 
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -28,47 +21,46 @@
 
     <div class="card-content" id="cardContent">
 
-      <h1 class="signupHeader">Hey you, Spottr! Let's get to know each other!</h1>
+      <h1 class="signupHeader">Hey you <span id='userEmail'><%- userEmail %></span>!Let's get to know each other!</h1>
 
       <label class="label">Fitness Goal</label>
-      <div class="dropdown is-active">
-        <div class="dropdown-trigger">
-          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-            <span>What is your goal?</span>
-            <span class="icon is-small">
-              <i class="fas fa-angle-down" aria-hidden="true"></i>
-            </span>
-          </button>
-        </div>
-        <div class="dropdown-menu" id="dropdown-menu" role="menu">
-          <div class="dropdown-content">
-            <a class="dropdown-item">
-              Weight Loss
-            </a>
-            <a class="dropdown-item">
-              Muscle Gain
-            </a>
-            <a class="dropdown-item is-active">
-              Strength and Conditioning
-            </a>
-            <a class="dropdown-item">
-              Improve Athletic Performance
-            </a>
+        <div class="dropdown fgDD is-fullwidth">
+          <div class="dropdown-trigger">
+            <button class="button is-fullwidth" aria-haspopup="true" aria-controls="dropdown-menu">
+              <span class="is-fullwidth" id="fitnessgoal">What is your goal?</span>
+              <span class="icon is-small">
+                <i class="fas fa-angle-down" aria-hidden="true"></i>
+              </span>
+            </button>
+          </div>
+          <div class="dropdown-menu is-fullwidth" id="dropdown-menu" role="menu">
+            <div class="dropdown-content">
+              <a class="dropdown-item" data-value="Weight Loss">
+                Weight Loss
+              </a>
+              <a class="dropdown-item" data-value="Muscle Gain">
+                Muscle Gain
+              </a>
+              <a class="dropdown-item is-active" data-value="Strength and Conditioning">
+                Strength and Conditioning
+              </a>
+              <a class="dropdown-item" data-value="Improve Atheletic Performance">
+                Improve Athletic Performance
+              </a>
+            </div>
           </div>
         </div>
-      </div>
 
-      <label class="label">Your ZIP Code</label>
-      <input class="input contactInput" placeholder="ZIP Code">
+        <label class="label">Your ZIP Code</label>
+        <input class="input zipcode" placeholder="ZIP Code">
 
-      <br />
-      <br />
+        <br/>
+        <br/>
 
-      <div class="buttons">
-        <button class="button is-link">Find me a Spottr!</button>
-      </div>
-      <br />
-
+        <div class="buttons">
+          <button class="button is-link" id="matchBtn">Find me a Spottr!</button>
+        </div>
+        <br/>
 
 
 
@@ -77,8 +69,4 @@
 
 
     </div>
-
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
-
-</html>
+    <script type="text/javascript" src="../js/script.js"></script>
