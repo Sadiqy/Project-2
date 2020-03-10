@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-    <head>
-        <%- include ('../partials/head') %>
-      </head>
-
-<body class="internal">
-
-    <video id="videoBG" poster="images/poster.png" autoplay muted loop>
-        <source src="images/videobg.mov" type="video/mp4">
+    <video id="videoBG" poster="../images/poster.png" autoplay muted loop>
+        <source src="../images/videobg.mov" type="video/mp4">
     </video>
 
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <a class="navbar-item" href="index.html">
-            <img src="images/spottr.png" alt="Spottr logo" width="112" height="50">
+            <img src="../images/spottr.png" alt="Spottr logo" width="112" height="50">
         </a>
 
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
@@ -35,6 +27,7 @@
 
 
         <!-- profile modal -->
+        
         <div class="modal">
             <div class="modal-background"></div>
             <div class="modal-card">
@@ -47,9 +40,9 @@
                   </div>
                   <br/>
                   <div class="media-content">
-                    <p class="title is-4 modal-name">Name of Spottr</p>
-                    <p class="subtitle is-8">Fitness Goal: </p>
-                    <p class="subtitle is-8">ZIP Code: </p>
+                    <p class="title is-4 modal-name"> <%= matches.full_name %> </p>
+                    <p class="subtitle is-8">Fitness Goal: <%= matches.fitness_goal %> </p>
+                    <p class="subtitle is-8">ZIP Code: <%= matches.zipcode%> </p>
                   </div>
                   <div class="buttons modal-buttons">
                     <button class="button is-link gym-map">Gyms Nearby</button>
@@ -67,6 +60,4 @@
 
     </div>
 
-    <script type="text/javascript" src="js/script.js"></script>
-</body>
-</html>
+    <script type="text/javascript" src="../js/script.js"></script>

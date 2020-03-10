@@ -304,109 +304,18 @@
 }
 
 @media only screen and (min-width: 768px) {
-    #chest {
-        background-image: url("images/chest.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    #legs {
-        background-image: url("images/legs.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    #back {
-        background-image: url("images/back.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    #shoulders {
-        background-image: url("images/shoulders.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    #arms{
-        background-image: url("images/arms.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    #core {
-        background-image: url("images/core.jpeg");
-        width: 220px;
-        height: 200px;
-        font-weight: bold;
-        font-size: 30px;
-    }
-
-    .aboutFooter {
-        position: fixed;
-    }
-
-  }
-
-
-  @media only screen and (max-width: 600px) {
-    
-    #signinCard {
-        margin: auto;
-        padding: 30px;
-        width: 100%;
-    }
-
-    .contactSubmit {
-        width: 25%;
-    }
-
-    .contactFooter {
-        position:fixed;
-        left:0px;
-        bottom:0px;
-        height:30px;
-        width:100%;
-    }
-
-    .signIn {
-        margin: auto;
-        font-size: 15px;
-    }
-  }
-
-
-  @media only screen and (max-width: 768px) {
     #videoBG {
-        display: none;
-    }
-    body {
-        background: url('images/poster.png');
-        background-size: cover;
+        width:100%;
+        height: auto;
     }
 
-    .contactFooter {
-        position:fixed;
-        left:0px;
-        bottom:0px;
-        height:30px;
+  }
+
+
+@media only screen and (max-width: 600px) {
+   #videoBG {
         width:100%;
-    }
-    
-    #contactCard {
-        margin: auto;
-        padding: 30px;
-        width: 100%;
+        height: auto;
     }
 
     .signIn {
